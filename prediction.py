@@ -113,4 +113,4 @@ class Prediction():
         train_data = windowed_dataset(x_train, y_train, True)
         test_data = windowed_dataset(x_test, y_test, False)
         history = self.get_learned_data(train_data=train_data, test_data=test_data)
-        print(history)
+        self.show_history(history=history, test_data=test_data, y_test=y_test)
