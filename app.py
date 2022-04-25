@@ -1,14 +1,20 @@
 from flask import Flask, jsonify, request
 
-# from flask_restx import Resource, Api
+from flask_restx import Resource, Api
 
 app = Flask(__name__)
-# api = Api(app)
+api = Api(app)
 
 
-@app.route("/covidResult", methods=["POST"])
-def hello(self):
-    return {"just": "fun"}
+# @app.route("/covidResult", methods=["POST"])
+# def hello(self):
+#     return {"just": "fun"}
+
+
+@api.route("/coividResult")
+class Hello(Resource):
+    def post(self):
+        return {"just": "fun"}
 
 
 if __name__ == "__main__":
